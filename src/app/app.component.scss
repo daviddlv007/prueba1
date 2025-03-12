@@ -1,0 +1,51 @@
+@use '../styles' as v;
+
+/* Contenedor principal */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Barra superior fija */
+app-topbar {
+    background-color: v.$topbar-bg;
+    color: v.$text-white;
+    padding: 8px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: v.$topbar-height;
+    z-index: 1000;
+}
+
+/* Contenedor de la sidebar y el contenido */
+.content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    margin-top: v.$topbar-height;
+    height: calc(100vh - v.$topbar-height);
+}
+
+/* Barra lateral fija */
+app-sidebar {
+    width: v.$sidebar-width;
+    background-color: v.$sidebar-bg;
+    color: v.$text-white;
+    position: fixed;
+    top: v.$topbar-height;
+    left: 0;
+    height: calc(100vh - v.$topbar-height);
+    z-index: 900;
+}
+
+/* Contenido principal */
+.main-content {
+    flex-grow: 1;
+    margin-left: v.$sidebar-width;
+    background-color: v.$content-bg;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+}
